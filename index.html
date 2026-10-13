@@ -350,7 +350,10 @@ s0.parentNode.insertBefore(s1,s0);
       <h2>Get a Free Quote</h2>
       <p>Tell us about your project and we will contact you.</p>
 
-      <form id="quotePopupForm">
+      <form id="quotePopupForm" action="https://formsubmit.co/Saad@thinktechnologies.net" method="POST">
+        <input type="hidden" name="_subject" value="New lead — The US Publisher">
+        <input type="hidden" name="_cc" value="theuspublisher@gmail.com">
+        <input type="hidden" name="_template" value="table">
         <input type="text" name="fullName" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email Address" required>
         <input type="text" name="phone" placeholder="Phone Number" required>
@@ -833,6 +836,10 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
 
             <div class="p-7 sm:p-10 lg:p-12 bg-black/10">
+              <form id="contactForm" action="https://formsubmit.co/Saad@thinktechnologies.net" method="POST">
+        <input type="hidden" name="_subject" value="New lead — The US Publisher">
+        <input type="hidden" name="_cc" value="theuspublisher@gmail.com">
+        <input type="hidden" name="_template" value="table">
                 <div class="grid gap-4">
                   <div class="grid sm:grid-cols-2 gap-4">
                     <div>
@@ -909,7 +916,7 @@ s0.parentNode.insertBefore(s1,s0);
     <!-- Contact -->
     <div class="footer-col">
       <h4>Contact</h4>
-      <p><strong>Telephone</strong><br>+1 512 668 6838</p>
+      <p><strong>Telephone</strong><br>+1 737 282 5860</p>
       <p><strong>E-mail</strong><br>support@theuspublisher.com</p>
       <p><strong>Address</strong><br>
         915 Wilshire Blvd<br>
@@ -960,19 +967,6 @@ s0.parentNode.insertBefore(s1,s0);
     const saved = localStorage.getItem('pbw_theme');
     if (saved) applyTheme(saved);
 
-    function handleSubmit(e) {
-  const msg = document.getElementById('formMsg');
-
-  // show success AFTER submit starts
-  setTimeout(() => {
-    msg.classList.remove('hidden');
-    msg.classList.remove('text-red-300');
-    msg.classList.add('text-emerald-300');
-    msg.textContent = "✅ Thanks! Your message has been sent.";
-    e.target.reset();
-  }, 700);
-}
-window.handleSubmit = handleSubmit;
 
     function openChat() {
       if (window.Tawk_API && typeof window.Tawk_API.maximize === "function") {
@@ -1062,7 +1056,10 @@ window.handleSubmit = handleSubmit;
     </p>
 
     <!-- ✅ THIS IS YOUR FORM -->
-    <form id="quoteForm">
+    <form id="quoteForm" action="https://formsubmit.co/Saad@thinktechnologies.net" method="POST">
+        <input type="hidden" name="_subject" value="New lead — The US Publisher">
+        <input type="hidden" name="_cc" value="theuspublisher@gmail.com">
+        <input type="hidden" name="_template" value="table">
 
       <input
         type="text"
@@ -1128,60 +1125,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("firstVisitModal").style.display = "flex";
 });
 </script>
-<script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwLxXtYTaAWR8qlOUPacqwimO8Mv4ODAY1scf4KXUpJm2A0JFnKtjf4RxCZ4q8USF7k/exec";
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("quoteForm");
-  const successMsg = document.getElementById("successMsg");
-
-  if (!form) return;
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const btn = form.querySelector("button[type='submit']");
-    if (btn) {
-      btn.disabled = true;
-      btn.textContent = "SENDING...";
-    }
-
-    const payload = {
-      fullName: form.fullName.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      service: form.service.value,
-      description: form.description.value
-    };
-
-    fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify(payload)
-})
-  .then(() => {
-    successMsg.style.display = "block";
-    form.reset();
-
-   setTimeout(() => closeFVModal(), 1200);
-})
- .catch(() => {
-  // this will almost never fire now
-  alert("Network error. Please try again.");
-})
- .finally(() => {
-   if (btn) {
-     btn.disabled = false;
-     btn.textContent = "SUBMIT";
-  }
-});
-
-  });
-});
-</script>
 
 
 <script>
@@ -1271,4 +1215,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-
