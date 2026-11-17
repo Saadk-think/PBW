@@ -355,6 +355,7 @@ chaps.forEach((c,i)=>{const s=i/3,e=(i+1)/3,m=(s+e)/2,t=C(1-Math.abs(q-m)/.2);co
 $('#mt').style.transform=`scaleX(${q})`;$('#cn').textContent='0'+(q<.33?1:q<.66?2:3)+' / 03'}
 /* horizontal showcase */
 const hr=$('#showcase').getBoundingClientRect(),hq=C(-hr.top/(hr.height-vh));tx=L(tx,hq,.1);tr.style.transform=`translateX(${-tx*(tr.scrollWidth-innerWidth)}px)`;
+const cx2=innerWidth/2;$$('.cv').forEach(cv=>{const rc=cv.getBoundingClientRect();const d=Math.abs(rc.left+rc.width/2-cx2);const t2=C(1-d/(innerWidth*.42));cv.style.filter=`brightness(${18+t2*87}%) saturate(${25+t2*95}%)`;cv.style.transform=`scale(${.82+t2*.18})`;cv.style.boxShadow=`0 ${40+t2*20}px ${80+t2*20}px -20px #0009, 0 0 ${t2*90}px ${t2*22}px rgba(255,255,255,${t2*.4})`});
 /* process line */
 const sr=steps.getBoundingClientRect();sp.style.transform=`scaleY(${C((vh*.6-sr.top)/sr.height)})`;
 requestAnimationFrame(frame)}
