@@ -138,8 +138,15 @@ footer.dk{padding:90px 0 30px;border-top:0}
 #lgov-body h4{font:800 11px var(--sans);letter-spacing:.16em;color:var(--lime);margin:22px 0 8px}
 #lgov-body p{color:var(--mut);font-size:15px;line-height:1.75}
 #lgov-body small{color:var(--mut);display:block}
+.ltabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}.lt{padding:9px 15px;border-radius:99px;border:1px solid var(--line);background:none;font:600 13px var(--sans);color:var(--mut);cursor:pointer}.lt.on{background:var(--vio);color:#fff;border-color:var(--vio)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}.w i{transform:none}.hero p.lead,.hero .btn{opacity:1}}
 #gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+[data-theme="dark"] #gl{display:none}
+.dd{position:relative}
+.ddmenu{position:absolute;top:140%;left:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;min-width:220px;box-shadow:0 24px 50px -22px #0008;opacity:0;pointer-events:none;transform:translateY(-6px);transition:.25s;z-index:60}
+.dd:hover .ddmenu{opacity:1;pointer-events:all;transform:none}
+.ddmenu a{display:block;padding:9px 12px;border-radius:9px;font-size:14px;color:var(--mut)}
+.ddmenu a:hover{background:color-mix(in srgb,var(--vio) 14%,transparent);color:var(--ink)}
 .mq{padding:34px 0;border-block:0;background:linear-gradient(90deg,#0d0e13,#0d0e1300 12%,#0d0e1300 88%,#0d0e13),linear-gradient(#ffffff08,#ffffff03)}
 .mq::before,.mq::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--vio),var(--lime),var(--cor),transparent);opacity:.6}.mq::before{top:0}.mq::after{bottom:0}
 .mq #mqt{display:flex;align-items:center;gap:36px;width:max-content;font:inherit;animation:mq 46s linear infinite}.mq:hover #mqt{animation-play-state:paused}
@@ -160,6 +167,8 @@ body.lk{overflow:hidden}body:not(.go) .w i,body:not(.go) .hero p.lead,body:not(.
 .pg span{display:block;text-align:center;font-size:44px;color:var(--vio);animation:spin 6s linear infinite}.pg b{display:block;position:relative;z-index:1;font:300 italic clamp(44px,9vw,130px) var(--serif);letter-spacing:-.03em}
 /* ===== v4: light luxe theme, open type, water+fire, perf ===== */
 :root{--bg:#fbf7ef;--ink:#1b1536;--mut:#5f5a78;--lime:#ff5a36;--vio:#6a3df0;--cor:#ff8a3d;--card:#fffdf8;--line:#1b153624}
+:root[data-theme="dark"]{--bg:#150f33;--ink:#fff9f0;--mut:#c4bde3;--card:#201848;--line:#ffffff26;--lime:#ffb454;--vio:#9b7bff}
+html{transition:background-color .4s}
 .dk{--bg:#150f33;--ink:#fff9f0;--mut:#c4bde3;--card:#201848;--line:#ffffff26;--lime:#ffb454;--vio:#9b7bff;background:#150f33;color:var(--ink)}
 body{font-size:18px;line-height:1.8}.shell{width:min(1180px,90%)}
 h1,h2,h3{font-weight:400;letter-spacing:-.02em;line-height:1.12}h1{font-size:clamp(50px,8vw,120px);line-height:1.08}h2{font-size:clamp(38px,5.6vw,88px)}
@@ -172,7 +181,13 @@ h1,h2,h3{font-weight:400;letter-spacing:-.02em;line-height:1.12}h1{font-size:cla
 details{padding:30px 0}details p{line-height:1.85;font-size:17px}.faq{gap:90px}.chap h2{text-shadow:none;line-height:1.12}.chap p{font-size:19px;margin-top:28px}.ci h2{line-height:1.1}
 .btn{background:linear-gradient(120deg,#6a3df0,#b43cf0 55%,#ff5a36);color:#fff;box-shadow:0 16px 40px -14px #6a3df0}
 .grad{background-image:linear-gradient(100deg,#6a3df0,#19b8c9,#ff5a36,#f5b83d,#6a3df0);background-size:300%;-webkit-background-clip:text;background-clip:text}
-nav.s{background:#fbf7efee;backdrop-filter:none;box-shadow:0 1px 0 var(--line)}.brand i{width:44px;height:44px;background:none}.brand i svg{width:44px;height:44px}
+nav.s{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px) saturate(160%);box-shadow:0 1px 0 var(--line)}
+nav{background:color-mix(in srgb,var(--bg) 62%,transparent);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid var(--line)}
+.tgl{position:relative;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:color-mix(in srgb,var(--bg) 70%,transparent);display:grid;place-items:center;color:var(--ink);cursor:pointer;flex:0 0 auto}
+.tgl svg{position:absolute;width:18px;height:18px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.tgl .i-moon{fill:currentColor;stroke:none;display:none}
+[data-theme="dark"] .tgl .i-sun{display:none}
+[data-theme="dark"] .tgl .i-moon{display:block}.brand i{width:44px;height:44px;background:none}.brand i svg{width:44px;height:44px}
 #cur{background:#6a3df0;mix-blend-mode:normal}#cur2{border-color:#ff5a36;mix-blend-mode:normal}
 #bg{z-index:2}.tag{background:#fffdf8e6;backdrop-filter:none;color:var(--ink)}.stage::before{filter:none}.fp{backdrop-filter:none;background:#fffdf8;color:#1b1536;--ink:#1b1536;--mut:#5f5a78;--line:#1b153630;--lime:#ff5a36}.fp label{margin-bottom:24px}input,select,textarea{background:#fbf7ef;color:#1b1536}
 .rv{filter:none;transform:translateY(40px);transition-duration:.9s}.rv.in{transform:none}
@@ -201,8 +216,9 @@ nav.s{background:#fbf7efee;backdrop-filter:none;box-shadow:0 1px 0 var(--line)}.
 </style></head><body class="lk">
 <canvas id="gl"></canvas><div id="ld"><div><div class="lb">PROFESSIONAL BOOK WRITING</div><div class="ll"><i></i><i style="width:78%"></i><i style="width:90%"></i></div><div class="ln"><span id="lc">0</span><small>%</small></div><div class="lt">Once upon a story…</div></div></div><div id="pt"><div class="pg"><div><span>✳</span><b id="ptt"></b></div></div></div>
 <canvas id="bg"></canvas>
-<div id="lgov" class="lgov" aria-hidden="true"><div class="lgov-card"><button class="lgov-x" aria-label="Close">✕</button><div id="lgov-body"></div></div></div><div id="bar"></div><div id="cur"></div><div id="cur2"></div>
-<nav id="nav"><a class="brand" href="#home"><i>✦</i><span>PROFESSIONAL<br>BOOK WRITING</span></a><div class="links"><a href="#experience">The experience</a><a href="#services">Services</a><a href="#process">Process</a><a href="#showcase">Creative work</a><a href="#packages">Packages</a><a href="#faq">FAQs</a></div><a class="btn" href="https://wa.me/15126686838" target="_blank" rel="noopener" data-m>Let's talk ↗</a></nav>
+<div id="lgov" class="lgov" aria-hidden="true"><div class="lgov-card"><button class="lgov-x" aria-label="Close">✕</button><div id="lgov-body"></div></div></div>
+<div id="lead" class="lgov" aria-hidden="true"><div class="lgov-card"><button class="lgov-x" id="leadX" aria-label="Close">✕</button><small style="color:var(--lime);font:800 11px var(--sans);letter-spacing:.14em">RESERVE YOUR DISCOUNT</small><h3 style="margin:10px 0">Reserve your offer before you browse.</h3><p style="color:var(--mut);margin-bottom:20px">First-time clients get 50% off their first package. Returning clients get 10% off their next project.</p><div class="ltabs"><button type="button" class="lt on" data-txt="First-time client — 50% off">First-time · 50% off</button><button type="button" class="lt" data-txt="Returning client — 10% off">Returning · 10% off</button></div><form id="leadForm"><input name="name" placeholder="Full name" required minlength="2" style="margin-bottom:12px"><input name="email" type="email" placeholder="Email address" required style="margin-bottom:12px"><input type="hidden" name="offer" value="First-time client — 50% off"><button class="btn" type="submit">Reserve my discount ↗</button><p id="leadSt" style="margin-top:10px;font-size:13px;color:var(--lime)"></p></form></div></div><div id="bar"></div><div id="cur"></div><div id="cur2"></div>
+<nav id="nav"><a class="brand" href="#home"><i>✦</i><span>PROFESSIONAL<br>BOOK WRITING</span></a><div class="links"><a href="#home">Home</a><a href="#about">About us</a><div class="dd"><a href="#services">Services ▾</a><div class="ddmenu"><a href="book-writing.html">Book Writing</a><a href="editing.html">Editing</a><a href="publishing.html">Publishing</a><a href="marketing.html">Marketing</a><a href="audiobook.html">Audiobook</a><a href="author-website.html">Author Website</a><a href="social-media.html">Social Media Marketing</a><a href="hardcopies.html">Hardcopies</a></div></div><a href="#packages">Packages</a><a href="#faq">FAQs</a><a href="#consultation">Contact us</a></div><div style="display:flex;gap:12px;align-items:center"><button class="tgl" id="tglBtn" aria-label="Toggle dark mode"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></button><a class="btn" href="https://wa.me/15126686838" target="_blank" rel="noopener" data-m>Let's talk ↗</a></div></nav>
 <main>
 <section class="hero" id="home"><div class="shell"><div>
 <div class="kick">FOR THE STORIES WORTH TELLING</div>
@@ -278,8 +294,20 @@ nav.s{background:#fbf7efee;backdrop-filter:none;box-shadow:0 1px 0 var(--line)}.
 
 <script>
 (()=>{const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],L=(a,b,t)=>a+(b-a)*t,C=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),E=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2,seg=(p,a,b)=>C((p-a)/(b-a));
-const KEY='46ffdcb2-e429-48ee-a2b6-dc4091a35fa0';/* Get this free at web3forms.com — sign up with Theuspublishers@gmail.com, then paste the access key it gives you here. */$('#y').textContent=new Date().getFullYear();
+const KEY='REPLACE_WITH_YOUR_ACCESS_KEY';
+const leadEl=$('#lead'),openLead=()=>leadEl.classList.add('on'),closeLead=()=>leadEl.classList.remove('on');
+$('#leadX').addEventListener('click',closeLead);leadEl.addEventListener('click',e=>{if(e.target===leadEl)closeLead()});
+$$('.lt').forEach(b=>b.addEventListener('click',()=>{$$('.lt').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#leadForm').offer.value=b.dataset.txt}));
+let leadSeen=null;try{leadSeen=localStorage.getItem('pbw-lead-seen')}catch(e){}
+if(!leadSeen)setTimeout(openLead,3000);
+$('#leadForm').addEventListener('submit',async e=>{e.preventDefault();const lf=e.target,lst=$('#leadSt'),ld=new FormData(lf);
+if(!lf.name.value.trim()||!/^\S+@\S+\.\S+$/.test(lf.email.value)){lst.textContent='Please add your name and a valid email.';return}
+if(KEY.startsWith('REPLACE')){lst.textContent='Form not connected yet.';return}
+ld.append('access_key',KEY);lst.textContent='Sending…';try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:ld}),j=await r.json();if(j.success){lst.textContent='Reserved — we\'ll be in touch.';lf.reset();try{localStorage.setItem('pbw-lead-seen','1')}catch(e){}setTimeout(closeLead,1600)}else throw 0}catch{lst.textContent='Could not send right now.'}});/* Get this free at web3forms.com — sign up with Theuspublishers@gmail.com, then paste the access key it gives you here. */$('#y').textContent=new Date().getFullYear();
 const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let saved=null;try{saved=localStorage.getItem('pbw-theme')}catch(e){}
+const html0=document.documentElement;html0.dataset.theme=saved||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+$('#tglBtn').addEventListener('click',()=>{const nt=html0.dataset.theme==='dark'?'light':'dark';html0.dataset.theme=nt;try{localStorage.setItem('pbw-theme',nt)}catch(e){}});
 $$('.card[data-href]').forEach(c=>{c.style.cursor='pointer';c.addEventListener('click',()=>{location.href=c.dataset.href})});
 const CI=['<path d="M20 4c-7 0-12 4-13 11l-3 5 5-3c7-1 11-6 11-13zM8 16l7-7"/>','<path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5zM12 6v13"/>','<path d="M12 3l6 9-4.5 8h-3L6 12zM12 3v9"/><circle cx="12" cy="13" r="1.3"/>','<path d="M12 3a9 9 0 100 18c1.5 0 2-1 1.5-2s0-2 1.5-2h2a3 3 0 003-3c0-5-4-11-8-11z"/><circle cx="8" cy="11" r=".9"/><circle cx="12" cy="7.5" r=".9"/><circle cx="16" cy="10" r=".9"/>','<path d="M4 14v-2a8 8 0 0116 0v2M4 14h3.5v6H6a2 2 0 01-2-2zM20 14h-3.5v6H18a2 2 0 002-2z"/>','<path d="M4 10v4h3l8 4V6L7 10zM18 9a4 4 0 010 6M7 14l1 5h2l-1-4"/>','<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>','<circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="17" r="2.2"/><path d="M7.8 8.3l3 7M16.3 7.4l-3 7.3M8.2 6.5l7.6-.7"/>','<path d="M7 8V4h10v4M6 17H5a2 2 0 01-2-2v-4a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2h-1M7 14h10v6H7z"/>'];
 $$('.ic[data-ic]').forEach(e=>{e.innerHTML=`<svg viewBox="0 0 24 24">${CI[+e.dataset.ic].replace(/<(path|circle)/g,'<$1 pathLength="1"')}</svg>`});
@@ -331,7 +359,7 @@ const nav=$('#nav'),bar=$('#bar'),hb=$('#hb'),cb=$('#cb'),cc=$('#cc'),sk=$('#sk'
 let pr=0,hp=0,tx=0;
 function frame(){const y=scrollY,vh=innerHeight;sv=L(sv,y-lastY,.12);lastY=y;
 cx=L(cx,mx,.12);cy=L(cy,my,.12);cur2.style.transform=`translate(${cx}px,${cy}px)`;
-bar.style.transform=`scaleX(${y/SH})`;nav.classList.toggle('s',y>60);const mq=$('#mqt');if(mq)mq.style.animationDuration=(46/(1+Math.min(Math.abs(sv)*.5,5)))+'s';
+bar.style.transform=`scaleX(${y/SH})`;nav.classList.toggle('s',y>60);
 draw();
 /* hero book follows cursor + scroll */
 const nx=(mx/innerWidth-.5),ny=(my/innerHeight-.5);hp=L(hp,y/vh,.1);
@@ -354,8 +382,7 @@ $('#r1').style.transform=`translate(-50%,-50%) rotate(${q*360}deg) scale(${.7+q*
 chaps.forEach((c,i)=>{const s=i/3,e=(i+1)/3,m=(s+e)/2,t=C(1-Math.abs(q-m)/.2);const o=E(C(t*1.6));c.style.opacity=o;c.style.transform=`translateY(${(q<m?1:-1)*(1-o)*70}px) scale(${.92+o*.08})`;if(i===0&&q<.08){c.style.opacity=1;c.style.transform='none'}});
 $('#mt').style.transform=`scaleX(${q})`;$('#cn').textContent='0'+(q<.33?1:q<.66?2:3)+' / 03'}
 /* horizontal showcase */
-const hr=$('#showcase').getBoundingClientRect(),hq=C(-hr.top/(hr.height-vh));tx=L(tx,hq,.1);tr.style.transform=`translateX(${-tx*(tr.scrollWidth-innerWidth)}px)`;
-const cx2=innerWidth/2;$$('.cv').forEach(cv=>{const rc=cv.getBoundingClientRect();const d=Math.abs(rc.left+rc.width/2-cx2);const t2=C(1-d/(innerWidth*.42));cv.style.filter=`brightness(${18+t2*87}%) saturate(${25+t2*95}%)`;cv.style.transform=`scale(${.82+t2*.18})`;cv.style.boxShadow=`0 ${40+t2*20}px ${80+t2*20}px -20px #0009, 0 0 ${t2*90}px ${t2*22}px rgba(255,255,255,${t2*.4})`});
+const hr=$('#showcase').getBoundingClientRect();if(hr.bottom>0&&hr.top<vh*1.2){const hq=C(-hr.top/(hr.height-vh));tx=L(tx,hq,.1);tr.style.transform=`translateX(${-tx*(tr.scrollWidth-innerWidth)}px)`;const cx2=innerWidth/2;$$('.cv').forEach(cv=>{const rc=cv.getBoundingClientRect();const d=Math.abs(rc.left+rc.width/2-cx2);const t2=C(1-d/(innerWidth*.42));cv.style.filter=`brightness(${18+t2*87}%) saturate(${25+t2*95}%)`;cv.style.transform=`scale(${.82+t2*.18})`;cv.style.boxShadow=t2>.5?`0 0 ${t2*70}px ${t2*16}px rgba(255,255,255,${t2*.35})`:'0 20px 50px -20px #0009'});}
 /* process line */
 const sr=steps.getBoundingClientRect();sp.style.transform=`scaleY(${C((vh*.6-sr.top)/sr.height)})`;
 requestAnimationFrame(frame)}
@@ -417,7 +444,7 @@ const lgov=$('#lgov'),openLegal=k=>{$('#lgov-body').innerHTML=LG[k];lgov.classLi
 $$('[data-legal]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openLegal(a.dataset.legal)}));
 lgov.addEventListener('click',e=>{if(e.target===lgov)closeLegal()});
 $('#lgov .lgov-x').addEventListener('click',closeLegal);
-addEventListener('keydown',e=>{if(e.key==='Escape')closeLegal()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeLegal();closeLead()}});
 /* form */
 $('#f').addEventListener('submit',async e=>{e.preventDefault();const f=e.target,st=$('#st'),d=new FormData(f);
 const errs=[];if(!f.name.value.trim())errs.push('your name');if(!/^\S+@\S+\.\S+$/.test(f.email.value))errs.push('a valid email');if(!f.service.value)errs.push('a service');if(f.message.value.trim().length<10)errs.push('a bit more detail about your project');if(errs.length){st.textContent='Please add: '+errs.join(', ')+'.';return}

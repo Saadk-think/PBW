@@ -32,3 +32,22 @@ body::after{content:"";position:fixed;bottom:-25%;right:-16%;width:60vw;height:6
 @keyframes type{from{width:0}}
 @keyframes blk{50%{border-color:transparent}}
 @media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}.rv{animation:none;opacity:1;transform:none}.shero h1{animation:none;width:var(--tw,auto);border-right:0}}
+
+/* more motion + packages */
+.shero i{position:relative;overflow:hidden;animation:float 3.4s ease-in-out infinite}
+.shero i::after{content:"";position:absolute;inset:-60%;background:linear-gradient(110deg,transparent 42%,#ffffff55 50%,transparent 58%);transform:translateX(-110%);animation:sheen 4.2s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes sheen{0%,55%{transform:translateX(-110%)}100%{transform:translateX(110%)}}
+.pkgs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pkg{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;transition:transform .35s}
+.pkg:hover{transform:translateY(-6px)}
+.pkg.pop{border-color:color-mix(in srgb,var(--acc,var(--vio)) 45%,var(--line));box-shadow:0 20px 50px -24px color-mix(in srgb,var(--acc,var(--vio)) 55%,transparent)}
+.pkg .badge{align-self:flex-start;background:color-mix(in srgb,var(--acc,var(--vio)) 85%,transparent);color:#fff;font:800 10px var(--sans);letter-spacing:.1em;padding:5px 10px;border-radius:99px;margin-bottom:14px}
+.pkg h3{font-size:22px;font-weight:600;margin-bottom:8px}
+.pkg .price{display:flex;align-items:baseline;gap:10px;margin-bottom:16px}
+.pkg .price del{color:var(--mut);font-size:15px}
+.pkg .price b{font-size:28px;font-family:var(--serif);font-weight:600;color:var(--acc,var(--vio))}
+.pkg ul{margin-bottom:20px;flex:1}
+.pkg .btn{justify-content:center;text-align:center;font-size:13px;padding:12px 18px}
+@media(max-width:560px){.pkgs{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.shero i{animation:none}.shero i::after{animation:none;display:none}}
