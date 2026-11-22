@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Professional Book Writing | Turn Your Story Into a Book</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Ghostwriting, editing, design, publishing and marketing for authors. Request a free consultation.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
@@ -15,7 +16,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1;letter-spacing:-
 em{font-style:italic;color:var(--lime)}
 #bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 #bar{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--vio),var(--lime),var(--cor));z-index:99}
-#cur,#cur2{position:fixed;left:0;top:0;z-index:98;pointer-events:none;border-radius:50%;mix-blend-mode:difference}
+#cur,#cur2{position:fixed;left:0;top:0;z-index:160;pointer-events:none;border-radius:50%;mix-blend-mode:difference}
 #cur{width:8px;height:8px;background:#fff;margin:-4px}#cur2{width:42px;height:42px;margin:-21px;border:1px solid #fff;transition:width .3s,height .3s,margin .3s}
 #cur2.big{width:84px;height:84px;margin:-42px}
 @media(hover:none){body{cursor:auto}#cur,#cur2{display:none}}
@@ -139,6 +140,19 @@ footer.dk{padding:90px 0 30px;border-top:0}
 #lgov-body p{color:var(--mut);font-size:15px;line-height:1.75}
 #lgov-body small{color:var(--mut);display:block}
 .ltabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}.lt{padding:9px 15px;border-radius:99px;border:1px solid var(--line);background:none;font:600 13px var(--sans);color:var(--mut);cursor:pointer}.lt.on{background:var(--vio);color:#fff;border-color:var(--vio)}
+.lead-card{max-width:920px;padding:0!important;display:grid;grid-template-columns:1fr 1.15fr;overflow-y:auto;overflow-x:hidden;max-height:88vh}
+.lead-art{background:linear-gradient(165deg,#1c1640,#3a2470 55%,#1c1640);padding:36px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.lead-art::before{content:"";position:absolute;inset:-30%;background:radial-gradient(circle at 30% 20%,#9b7bff55,transparent 60%);animation:drift 12s ease-in-out infinite}
+.lead-art .ic{width:50px;height:50px;position:relative;z-index:1}
+.lead-art .ic svg{stroke:#ffb454;filter:drop-shadow(0 0 10px #ffb454)}
+.lead-art small{display:block;font:800 10px var(--sans);letter-spacing:.14em;color:#c4bde3;margin:18px 0 8px;position:relative;z-index:1}
+.lead-art h4{font:300 32px/1.25 var(--serif);color:#fff9f0;position:relative;z-index:1}
+.lead-art h4 em{font-style:italic;color:#ffb454}
+.lead-badges{display:flex;gap:12px;position:relative;z-index:1}
+.lead-badges span{background:#ffffff14;border:1px solid #ffffff26;border-radius:14px;padding:10px 14px;font:700 22px var(--serif);color:#fff9f0}
+.lead-badges small{display:block;font:600 9px var(--sans);color:#c4bde3;margin-top:2px;letter-spacing:.04em}
+.lead-form{padding:clamp(28px,4vw,44px)}
+@media(max-width:720px){.lead-card{grid-template-columns:1fr;max-width:480px}.lead-art{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none;filter:none}.w i{transform:none}.hero p.lead,.hero .btn{opacity:1}}
 #gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 [data-theme="dark"] #gl{display:none}
@@ -217,7 +231,7 @@ nav{background:color-mix(in srgb,var(--bg) 62%,transparent);backdrop-filter:blur
 <canvas id="gl"></canvas><div id="ld"><div><div class="lb">PROFESSIONAL BOOK WRITING</div><div class="ll"><i></i><i style="width:78%"></i><i style="width:90%"></i></div><div class="ln"><span id="lc">0</span><small>%</small></div><div class="lt">Once upon a story…</div></div></div><div id="pt"><div class="pg"><div><span>✳</span><b id="ptt"></b></div></div></div>
 <canvas id="bg"></canvas>
 <div id="lgov" class="lgov" aria-hidden="true"><div class="lgov-card"><button class="lgov-x" aria-label="Close">✕</button><div id="lgov-body"></div></div></div>
-<div id="lead" class="lgov" aria-hidden="true"><div class="lgov-card"><button class="lgov-x" id="leadX" aria-label="Close">✕</button><small style="color:var(--lime);font:800 11px var(--sans);letter-spacing:.14em">RESERVE YOUR DISCOUNT</small><h3 style="margin:10px 0">Reserve your offer before you browse.</h3><p style="color:var(--mut);margin-bottom:20px">First-time clients get 50% off their first package. Returning clients get 10% off their next project.</p><div class="ltabs"><button type="button" class="lt on" data-txt="First-time client — 50% off">First-time · 50% off</button><button type="button" class="lt" data-txt="Returning client — 10% off">Returning · 10% off</button></div><form id="leadForm"><input name="name" placeholder="Full name" required minlength="2" style="margin-bottom:12px"><input name="email" type="email" placeholder="Email address" required style="margin-bottom:12px"><input type="hidden" name="offer" value="First-time client — 50% off"><button class="btn" type="submit">Reserve my discount ↗</button><p id="leadSt" style="margin-top:10px;font-size:13px;color:var(--lime)"></p></form></div></div><div id="bar"></div><div id="cur"></div><div id="cur2"></div>
+<div id="lead" class="lgov" aria-hidden="true"><div class="lgov-card lead-card"><button class="lgov-x" id="leadX" aria-label="Close">✕</button><div class="lead-art"><i class="ic" data-ic="0"></i><div><small>RESERVED FOR YOUR NEXT PROJECT</small><h4>Your <em>BEST</em><br>discount is waiting.</h4></div><div class="lead-badges"><span>50%<small>First-time clients</small></span><span>10%<small>Returning clients</small></span></div></div><div class="lead-form"><small style="color:var(--lime);font:800 11px var(--sans);letter-spacing:.14em;display:block;margin-bottom:10px">RESERVE YOUR DISCOUNT</small><h3 style="margin-bottom:10px">Reserve your offer before you browse.</h3><p style="color:var(--mut);margin-bottom:20px">Tell us where to send it. First-time clients get 50% off their first package; returning clients can reserve 10% off their next.</p><div class="ltabs"><button type="button" class="lt on" data-txt="First-time client — 50% off">First-time client · 50% off</button><button type="button" class="lt" data-txt="Returning client — 10% off">Returning client · 10% off</button></div><form id="leadForm"><input name="name" placeholder="Full name" required minlength="2" style="margin-bottom:12px"><div class="r2" style="margin-bottom:12px"><input name="email" type="email" placeholder="Email address" required><input name="phone" type="tel" placeholder="Phone number"></div><input type="hidden" name="offer" value="First-time client — 50% off"><button class="btn" type="submit" style="width:100%;justify-content:center">Reserve my BEST discount ↗</button><p style="font-size:12px;color:var(--mut);margin-top:12px">No pressure — we'll simply hold the offer and follow up about your project.</p><p id="leadSt" style="margin-top:8px;font-size:13px;color:var(--lime)"></p></form></div></div></div><div id="bar"></div><div id="cur"></div><div id="cur2"></div>
 <nav id="nav"><a class="brand" href="#home"><i>✦</i><span>PROFESSIONAL<br>BOOK WRITING</span></a><div class="links"><a href="#home">Home</a><a href="#about">About us</a><div class="dd"><a href="#services">Services ▾</a><div class="ddmenu"><a href="book-writing.html">Book Writing</a><a href="editing.html">Editing</a><a href="publishing.html">Publishing</a><a href="marketing.html">Marketing</a><a href="audiobook.html">Audiobook</a><a href="author-website.html">Author Website</a><a href="social-media.html">Social Media Marketing</a><a href="hardcopies.html">Hardcopies</a></div></div><a href="#packages">Packages</a><a href="#faq">FAQs</a><a href="#consultation">Contact us</a></div><div style="display:flex;gap:12px;align-items:center"><button class="tgl" id="tglBtn" aria-label="Toggle dark mode"><svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg><svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></button><a class="btn" href="https://wa.me/15126686838" target="_blank" rel="noopener" data-m>Let's talk ↗</a></div></nav>
 <main>
 <section class="hero" id="home"><div class="shell"><div>
@@ -294,7 +308,7 @@ nav{background:color-mix(in srgb,var(--bg) 62%,transparent);backdrop-filter:blur
 
 <script>
 (()=>{const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],L=(a,b,t)=>a+(b-a)*t,C=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),E=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2,seg=(p,a,b)=>C((p-a)/(b-a));
-const KEY='REPLACE_WITH_YOUR_ACCESS_KEY';
+const KEY='46ffdcb2-e429-48ee-a2b6-dc4091a35fa0';
 const leadEl=$('#lead'),openLead=()=>leadEl.classList.add('on'),closeLead=()=>leadEl.classList.remove('on');
 $('#leadX').addEventListener('click',closeLead);leadEl.addEventListener('click',e=>{if(e.target===leadEl)closeLead()});
 $$('.lt').forEach(b=>b.addEventListener('click',()=>{$$('.lt').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#leadForm').offer.value=b.dataset.txt}));
