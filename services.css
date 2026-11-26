@@ -51,3 +51,38 @@ body::after{content:"";position:fixed;bottom:-25%;right:-16%;width:60vw;height:6
 .pkg .btn{justify-content:center;text-align:center;font-size:13px;padding:12px 18px}
 @media(max-width:560px){.pkgs{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.shero i{animation:none}.shero i::after{animation:none;display:none}}
+
+/* main-site nav ported to service pages */
+:root[data-theme="dark"]{--bg:#150f33;--ink:#fff9f0;--mut:#c4bde3;--card:#201848;--line:#ffffff26}
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 70%,transparent);backdrop-filter:blur(14px) saturate(160%)}
+.links{display:flex;gap:24px;font-size:14px;color:var(--mut);align-items:center}
+.links a{color:var(--mut)}.links a:hover{color:var(--acc,var(--vio))}
+.dd{position:relative}
+.ddmenu{position:absolute;top:140%;left:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;min-width:220px;box-shadow:0 24px 50px -22px #0008;opacity:0;pointer-events:none;transform:translateY(-6px);transition:.25s;z-index:60}
+.dd:hover .ddmenu{opacity:1;pointer-events:all;transform:none}
+.ddmenu a{display:block;padding:9px 12px;border-radius:9px;font-size:14px;color:var(--mut)}
+.ddmenu a:hover{background:color-mix(in srgb,var(--acc,var(--vio)) 14%,transparent);color:var(--ink)}
+.tgl{position:relative;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:none;display:grid;place-items:center;color:var(--ink);cursor:pointer;flex:0 0 auto}
+.tgl svg{position:absolute;width:17px;height:17px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.tgl .i-moon{fill:currentColor;stroke:none;display:none}
+[data-theme="dark"] .tgl .i-sun{display:none}
+[data-theme="dark"] .tgl .i-moon{display:block}
+@media(max-width:860px){.links{display:none}}
+
+/* ported icon marquee + hero motes + typed tagline */
+.mq{overflow:hidden;padding:26px 0;margin:36px 0 0;background:linear-gradient(90deg,var(--bg),transparent 12%,transparent 88%,var(--bg)),linear-gradient(var(--card),var(--card));position:relative}
+.mq::before,.mq::after{content:"";position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--vio),var(--lime),var(--cor),transparent);opacity:.6}.mq::before{top:0}.mq::after{bottom:0}
+.mq #mqt2{display:flex;align-items:center;gap:30px;width:max-content;animation:mq 42s linear infinite}
+#mqt2 .lg{--a:var(--acc,var(--vio));width:64px;height:64px;border-radius:20px;display:grid;place-items:center;position:relative;overflow:hidden;color:var(--a);background:radial-gradient(circle at 30% 18%,color-mix(in srgb,var(--a) 32%,transparent),transparent 72%);border:1px solid color-mix(in srgb,var(--a) 44%,transparent);box-shadow:0 0 30px -8px color-mix(in srgb,var(--a) 55%,transparent)}
+#mqt2 .lg svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#mqt2 .dt{width:5px;height:5px;border-radius:50%;background:var(--acc,var(--vio));opacity:.7}
+@keyframes mq{to{transform:translateX(-50%)}}
+.shero{position:relative}
+.mote{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb,var(--acc,var(--vio)) 55%,transparent);animation:bob 5s ease-in-out infinite}
+.mote.dot{background:var(--acc,var(--vio));border:0;opacity:.6}
+@keyframes bob{50%{transform:translateY(-14px)}}
+.shero h2tag{display:none}
+.tagline{overflow:hidden;white-space:nowrap;display:inline-block;width:0;border-right:.07em solid var(--acc,var(--vio));animation:blk 1s step-end infinite,type2 1.2s steps(40,end) 1.6s forwards}
+@keyframes type2{to{width:var(--ttw)}}
+@media(max-width:720px){.tagline{white-space:normal;width:auto;border-right:0;animation:none}}
+@media(prefers-reduced-motion:reduce){.mote{animation:none}#mqt2{animation:none}.tagline{width:var(--ttw);border-right:0;animation:none}}
